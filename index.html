@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кибер-Хомяк</title>
-    <!-- Yandex.RTB -->
-<script>window.yaContextCb=window.yaContextCb||[]</script>
-<script src="https://yandex.ru/ads/system/context.js" async></script>
+    <link rel="icon" href="data:,">
+    
+    <!-- Yandex.RTB Загрузчик рекламы -->
+    <script>window.yaContextCb=window.yaContextCb||[]</script>
+    <script src="https://yandex.ru" async></script>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Главный контейнер (центрирует всю игру) -->
     <div class="game-container">
+        
         <!-- Счетчик монет -->
         <div class="score-container">
             <span id="score">0</span> 🪙
@@ -24,11 +29,10 @@
         </div>
 
         <!-- Меню улучшений (Магазин) -->
-                <!-- Меню улучшений (Магазин) -->
         <div class="shop-container">
             <h3>Кибер-Прокачка</h3>
             
-            <!-- Улучшение 1 (Старое) -->
+            <!-- Улучшение 1 -->
             <div class="upgrade-item" id="buy-upgrade">
                 <img src="assets/upgrade_icon.png" alt="Лапка" class="upgrade-img">
                 <div class="upgrade-info">
@@ -37,7 +41,7 @@
                 </div>
             </div>
 
-            <!-- Улучшение 2 (Новое!) -->
+            <!-- Улучшение 2 -->
             <div class="upgrade-item" id="buy-upgrade-2">
                 <img src="assets/upgrade_icon2.png" alt="Шедеврум" class="upgrade-img">
                 <div class="upgrade-info">
@@ -46,7 +50,7 @@
                 </div>
             </div>
 
-            <!-- Улучшение 3 (Новое!) -->
+            <!-- Улучшение 3 -->
             <div class="upgrade-item" id="buy-upgrade-3">
                 <img src="assets/upgrade_icon3.png" alt="ИИ-Сервер" class="upgrade-img">
                 <div class="upgrade-info">
@@ -56,51 +60,42 @@
             </div>
         </div>
 
-            <h3>Кибер-Прокачка</h3>
-            
-            <div class="upgrade-item" id="buy-upgrade">
-                <img src="assets/upgrade_icon.png" alt="Лапка" class="upgrade-img">
-                <div class="upgrade-info">
-                    <p class="upgrade-name">Кибер-Лапка</p>
-                    <p class="upgrade-cost">Цена: <span id="upgrade-cost">10</span> 🪙</p>
-                </div>
-            </div>
+        <!-- Кнопки рейтинга и рекламы в один ряд -->
+        <div class="buttons-row">
+            <button id="leaderboard-button" class="leaderboard-btn">🏆 Рейтинг</button>
+            <button id="ad-button" class="ad-btn">🎬 Реклама (+50 🪙)</button>
         </div>
-    </div>
-    <!-- Кнопка вызова рейтинга -->
-    <button id="leaderboard-button" class="leaderboard-btn">🏆 Рейтинг</button>
+
+    </div> <!-- Конец game-container -->
+
+
+    <!-- ========================================== -->
+    <!-- 👁️ СКРЫТЫЕ ОКНА (МОДАЛКИ) -->
+    <!-- ========================================== -->
 
     <!-- Окно рейтинга -->
     <div id="leaderboard-modal" class="leaderboard-overlay">
         <div class="leaderboard-content">
             <h2>🏆 ТОП ХАКЕРОВ</h2>
             <div id="leaderboard-list" class="leaderboard-list">
-                <!-- Сюда JavaScript вставит список лидеров -->
+                <!-- Сюда JavaScript вставит список -->
             </div>
-                        <button id="close-leaderboard" class="close-btn">Закрыть</button>
+            <button id="close-leaderboard" class="close-btn">Закрыть</button>
         </div>
     </div>
 
-       <!-- Кнопка вызова рекламы (всегда на экране) -->
-    <button id="ad-button" class="ad-btn">🎬 Реклама (+50 🪙)</button>
-
-    <!-- Правильное всплывающее окно рекламы -->
+    <!-- Всплывающее окно рекламы -->
     <div id="ad-modal" class="ad-modal-overlay">
         <div class="ad-modal-content">
             <h2>Загрузка рекламы...</h2>
-            
-            <!-- Сюда Яндекс сам загрузит видеоролик -->
+            <!-- Контейнер для рекламы Яндекса -->
             <div id="yandex_rtb_R-A-19746878-1"></div> 
-            
-            <!-- Кнопка награды (скрыта на старте) -->
             <button id="close-ad-real" class="close-btn" style="display:none; margin-top: 20px;">Забрать 50 🪙</button>
         </div>
     </div>
 
-
-    <!-- ТУТ БЫЛО ОКНО РЕКЛАМЫ — ТЕПЕРЬ ТУТ ПУСТО -->
-
     <script src="app.js"></script>
 </body>
 </html>
+
 
