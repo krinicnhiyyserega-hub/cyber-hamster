@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кибер-Хомяк</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <!-- Счетчик монет -->
+        <div class="score-container">
+            <span id="score">0</span> 🪙
+            <p id="cps-text">Доход в сек: +<span id="cps">0</span></p>
+        </div>
+
+        <!-- Главный хомяк для тапов -->
+        <div class="hamster-zone">
+            <img src="assets/hamster_main.png" id="hamster" alt="Кибер-Хомяк">
+        </div>
+
+        <!-- Меню улучшений (Магазин) -->
+                <!-- Меню улучшений (Магазин) -->
+        <div class="shop-container">
+            <h3>Кибер-Прокачка</h3>
+            
+            <!-- Улучшение 1 (Старое) -->
+            <div class="upgrade-item" id="buy-upgrade">
+                <img src="assets/upgrade_icon.png" alt="Лапка" class="upgrade-img">
+                <div class="upgrade-info">
+                    <p class="upgrade-name">Кибер-Лапка (+1/с)</p>
+                    <p class="upgrade-cost">Цена: <span id="upgrade-cost">10</span> 🪙</p>
+                </div>
+            </div>
+
+            <!-- Улучшение 2 (Новое!) -->
+            <div class="upgrade-item" id="buy-upgrade-2">
+                <img src="assets/upgrade_icon2.png" alt="Шедеврум" class="upgrade-img">
+                <div class="upgrade-info">
+                    <p class="upgrade-name">Шедеврум-Бот (+5/с)</p>
+                    <p class="upgrade-cost">Цена: <span id="upgrade-cost-2">100</span> 🪙</p>
+                </div>
+            </div>
+
+            <!-- Улучшение 3 (Новое!) -->
+            <div class="upgrade-item" id="buy-upgrade-3">
+                <img src="assets/upgrade_icon3.png" alt="ИИ-Сервер" class="upgrade-img">
+                <div class="upgrade-info">
+                    <p class="upgrade-name">Квантовый ИИ-Сервер (+25/с)</p>
+                    <p class="upgrade-cost">Цена: <span id="upgrade-cost-3">500</span> 🪙</p>
+                </div>
+            </div>
+        </div>
+
+            <h3>Кибер-Прокачка</h3>
+            
+            <div class="upgrade-item" id="buy-upgrade">
+                <img src="assets/upgrade_icon.png" alt="Лапка" class="upgrade-img">
+                <div class="upgrade-info">
+                    <p class="upgrade-name">Кибер-Лапка</p>
+                    <p class="upgrade-cost">Цена: <span id="upgrade-cost">10</span> 🪙</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Кнопка вызова рейтинга -->
+    <button id="leaderboard-button" class="leaderboard-btn">🏆 Рейтинг</button>
+
+    <!-- Окно рейтинга -->
+    <div id="leaderboard-modal" class="leaderboard-overlay">
+        <div class="leaderboard-content">
+            <h2>🏆 ТОП ХАКЕРОВ</h2>
+            <div id="leaderboard-list" class="leaderboard-list">
+                <!-- Сюда JavaScript вставит список лидеров -->
+            </div>
+            <button id="close-leaderboard" class="close-btn">Закрыть</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
