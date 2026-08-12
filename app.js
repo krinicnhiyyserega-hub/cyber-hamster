@@ -213,3 +213,49 @@ setInterval(() => {
         renderLeaderboard();
     }
 }, 5000);
+// ==========================================
+// 🎬 ПОДКЛЮЧЕНИЕ НАСТОЯЩЕЙ РЕКЛАМЫ ИЗ РСЯ
+// ==========================================
+
+// Твой личный ID из личного кабинета Яндекса
+const AD_BLOCK_ID = 'R-A-19746878-1'; 
+
+const adButton = document.getElementById('ad-button');
+const adModal = document.getElementById('ad-modal');
+const closeAdReal = document.getElementById('close-ad-real');
+
+// Нажатие на кнопку рекламы
+if (adButton) {
+    adButton.addEventListener('click', () => {
+        adModal.classList.add('active');
+        
+        // Прячем кнопку завершения, пока реклама загружается или идет
+        if (closeAdReal) closeAdReal.style.display = 'none'; 
+
+        // Вызываем показ полноэкранной рекламы Яндекса
+        window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({
+                blockId: AD_BLOCK_ID,
+                type: "fullscreen",
+                platform: "touch",
+                onRender: () => {
+                    // Яндекс успешно показал рекламу — включаем кнопку награды
+                    if (closeAdReal) closeAdReal.style.display = 'block'; 
+                }
+            });
+        });
+    });
+}
+
+// Нажатие на кнопку «Забрать монеты» после просмотра
+if (closeAdReal) {
+    closeAdReal.addEventListener('click', () => {
+        adModal.classList.remove('active');
+        
+        // Начисляем заслуженную награду
+        score += 50; 
+        updateUI();
+        saveGame();
+    });
+}
+
